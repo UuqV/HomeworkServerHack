@@ -1,0 +1,50 @@
+
+body, td {
+    color: #000000; font-family: Arial, Helvetica, sans-serif;
+}
+div {
+    color: #000000; font-family: Arial, Helvetica, sans-serif; width:fit-content; word-wrap:break-word;
+}
+p {
+    color: #000000; font-family: Arial, Helvetica, sans-serif; width:fit-content; max-width:700px; word-wrap:break-word;
+    /*    color: #000000; font-family: Arial, Helvetica, sans-serif; width:fit-content; max-width:2700px; word-wrap:break-word; */
+}
+li {
+    color: #000000; font-family: Arial, Helvetica, sans-serif; width:fit-content; max-width:700px; word-wrap:break-word;
+    /*    color: #000000; font-family: Arial, Helvetica, sans-serif; width:fit-content; max-width:1000px; word-wrap:break-word;*/
+}
+h1, h2, h3 {
+    color: #553377; /* CUSTOMIZE */ font-family: Arial, Helvetica, sans-serif; width:fit-content; max-width:700px; word-wrap:break-word;
+}
+pre {
+    max-width:1000px;
+}
+center {
+    width:fit-content; max-width:700px; word-wrap:break-word;
+}
+b            {    color: #553377; /* CUSTOMIZE */ font-family: Arial, Helvetica, sans-serif; }
+em, .italics {    color: #8866aa; /* CUSTOMIZE */ font-family: Arial, Helvetica, sans-serif; font-style:italic; }
+
+a:link {color:#0033cc;}      /* unvisited link */
+a:visited {color:#330cc;}    /* visited link */
+a:hover {color:#990000;}     /* mouse over link */
+a:active {color:#009900;}    /* selected link */
+
+table { }
+
+.panel {
+    margin: 10px 20px 10px 10px;
+    border-radius: 0;
+    background-color: #F8F8F8;
+}
+.col-md-6 {
+    padding: 0;
+}
+.box {
+    border-radius: 3px;
+    padding: 15px;
+    border: 2px solid #F0F0F0;
+    height: 100%;
+    margin: 5px;
+    background:rgba(255,255,255,0.8);
+}

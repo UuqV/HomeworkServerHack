@@ -112,7 +112,22 @@ window.addEventListener('load', function() {
             <h3 class="label">Upload New Version</h3>
             <p class="sub">
                 <?php require_once("view/".$semester."_".$course."_upload_message.php"); ?>
+<<<<<<< HEAD
             </p>
+=======
+                    </p>
+                    <form action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
+                        method="post" enctype="multipart/form-data" 
+                        onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
+
+                    <input type="dropbox-chooser" id="db-chooser" 
+                        name="dropbox-selected-file" style="visibility: hidden;" data-link-type="direct" />
+                    <div class="alert alert-info" id="dbchosen"></div>
+                    <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
+                    </form>
+
+            <!--
+>>>>>>> 7870edb4ac8d90b528614a08bf782eceaebd6b1f
             <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
                     method="post" enctype="multipart/form-data"
                     onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
