@@ -12,8 +12,6 @@ print('<link href="resources/'.$semester."_".$course.'_main.css" rel="stylesheet
 <link href="resources/bootmin.css" rel="stylesheet"></link>
 <link href="resources/badge.css" rel="stylesheet"></link>
 <script src="resources/script/main.js"></script>
-<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="rvnwm0uv4m59y3n"></script>
-
 
 <!-- DIFF VIEWER STUFF -->
 <script src='diff-viewer/jquery.js'></script>
@@ -114,24 +112,14 @@ window.addEventListener('load', function() {
             <h3 class="label">Upload New Version</h3>
             <p class="sub">
                 <?php require_once("view/".$semester."_".$course."_upload_message.php"); ?>
-                    </p>
-                    <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
-                        method="post" enctype="multipart/form-data" 
-                        onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
-                    <input type="dropbox-chooser" id="db-chooser" 
-                        name="dropbox-selected-file" style="visibility: hidden;" data-link-type="direct" />
-                    <div class="alert alert-info" id="dbchosen"></div>
-                    <input type="submit" value="Upload">
-
-
-            <!--
+            </p>
             <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
                     method="post" enctype="multipart/form-data"
                     onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
                     <label for="file" class="label">Select File:</label>
                     <input type="file" name="file" id="file" />
                     <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
-                </form> -->
+                </form>
         </div> <!-- end outer_box -->
 
         <!------------------------------------------------------------------------>
