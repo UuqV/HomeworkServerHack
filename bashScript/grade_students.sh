@@ -63,9 +63,7 @@ too_many_processes_count=0
 sleep_count=0
 
 
-# SETUP THE DIRECTORY LOCK FILE
-# arbitrarily using file descriptor 200
-exec 200>/var/lock/homework_submissions_server_lockfile || exit 1
+
 
 
 # OUTER LOOP

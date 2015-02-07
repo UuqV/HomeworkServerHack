@@ -1,5 +1,6 @@
 <?php
 require_once("controller/controller_functions.php");
+require_once("controller/data_functions.php");
 
 print('<!-- Course Container -->');
 require_once("view/".$semester."_".$course."_container.php");
@@ -112,25 +113,10 @@ window.addEventListener('load', function() {
             <h3 class="label">Upload New Version</h3>
             <p class="sub">
                 <?php require_once("view/".$semester."_".$course."_upload_message.php"); ?>
-<<<<<<< HEAD
             </p>
-=======
-                    </p>
-                    <form action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
-                        method="post" enctype="multipart/form-data" 
-                        onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
-
-                    <input type="dropbox-chooser" id="db-chooser" 
-                        name="dropbox-selected-file" style="visibility: hidden;" data-link-type="direct" />
-                    <div class="alert alert-info" id="dbchosen"></div>
-                    <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
-                    </form>
-
-            <!--
->>>>>>> 7870edb4ac8d90b528614a08bf782eceaebd6b1f
             <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
                     method="post" enctype="multipart/form-data"
-                    onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
+                    onsubmit="<?php echo "YASSSS"; upload_homework($username, $semester, $course, $assignment_id, $homework_file);?>">
                     <label for="file" class="label">Select File:</label>
                     <input type="file" name="file" id="file" />
                     <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
@@ -342,6 +328,7 @@ window.addEventListener('load', function() {
         versions_allowed = parseInt(versions_allowed);
         if (versions_used >= versions_allowed) {
             var message = confirm("Are you sure you want to upload for " + assignment + " ?  You have already used up all of your free submissions (" + versions_used + " / " + versions_allowed + ").  Uploading may result in loss of points.");
+						
             return message;
         }
         return true;

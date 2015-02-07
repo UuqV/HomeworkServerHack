@@ -1,0 +1,42 @@
+@font-face {
+	font-family: Franklin;
+	src: url("Franklin Gothic Demi Cond Regular.ttf");
+}
+body {
+	background-image: url(paper.jpg);
+	background-color: #bfa187;
+	margin: 0px;
+	font-family: Franklin;
+}
+#header {
+		border-bottom-style: solid;
+		border-width: 1px;
+		padding-left: 1%;
+		padding-top: .3%;
+		
+}
+#nav {
+    height: 100%;
+    width: 20%;
+    float:left;
+		border-width: 1px;
+		border-right-style: solid;
+		     
+}
+#container {
+	background-color:rgba(256, 256, 256, 0.3); 
+	width: 77%;
+	float:left;
+	padding:10px;
+	height: 100%;
+}
+#link {
+	border-bottom-style: solid;
+	padding: 10px;
+	border-width: 1px;
+	margin: 0px;
+}
+
+#link:hover {
+	background-color:rgba(0, 0, 0, 0.3);
+}
