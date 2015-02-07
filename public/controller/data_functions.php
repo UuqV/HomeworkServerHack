@@ -25,6 +25,7 @@ function get_path_front_root() {
 
       fclose($file);
    }
+	 echo $path_front_root;
    return $path_front_root;
 }
 
@@ -38,9 +39,9 @@ function get_path_front_course($semester,$course) {
         display_error("INVALID COURSE: ".$course);
     }
     $path_front_root = get_path_front_root();
+		echo $path_front_root."/courses/".$semester."/".$course;
     return $path_front_root."/courses/".$semester."/".$course;
 }
-
 
 
 
@@ -337,6 +338,7 @@ function get_class_config($semester,$course) {
 
     $path_front = get_path_front_course($semester,$course);
     $file = $path_front."/config/class.json";
+		echo $file;
     //    $file = $path_front."/results/class.json";
     if (!file_exists($file)) {
         ?><script>alert("Configuration for this class (<?php echo $file ?>) does not exist. Quitting.");</script>
@@ -485,6 +487,9 @@ function is_valid_semester($semester) {
     if ($semester == "s15") {
         return true;
     }
+    if ($semester == "mlh"){
+        return true;
+    }
     //For auto-setup script:
     //if ($semester == "default") {return true;}
     return false;
@@ -509,6 +514,10 @@ function is_valid_course($course) {
         return true;
     }
     if ($course == "csci4530") {
+        return true;
+    }
+    if ($course == "python")
+    {
         return true;
     }
     //For auto-setup script:

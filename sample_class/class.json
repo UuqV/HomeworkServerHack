@@ -1,0 +1,24 @@
+{
+    "assignments": [
+        {
+            "assignment_id":"hw1",
+            "assignment_name":"Homework 1: YOLOSWAG",
+            "released":true,
+            "ta_grade_released":false
+        },
+        {
+            "assignment_id":"lab1",
+            "assignment_name":"Lab 1 Getting Started",
+            "released":true,
+            "ta_grade_released":false
+        }
+    ],
+    "dev_team": [
+        "dev"
+    ],
+    "ta_grades":true,
+    "grade_summary":true,
+    "download_readme":true,
+    "download_files":false
+
+}

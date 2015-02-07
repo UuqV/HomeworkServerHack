@@ -16,10 +16,10 @@ if (isset($_SERVER['PHP_AUTH_USER'])) {
 } else {
     // if not already authenticated do it
     //
-    echo 'Internal Error - Not Authenticated'; exit();//here
+    //echo 'Internal Error - Not Authenticated'; exit();//here
     //
 }
-
+$user = "deadbeef";
 //Remove error reporting and ini set for production code
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -27,11 +27,11 @@ ini_set('display_errors', 1);
 session_start();
 $_SESSION["id"] = $user;
 
-if (isset($_GET["page"])) {
+/*if (isset($_GET["page"])) {
     $page = htmlspecialchars($_GET["page"]);
-} else {
+} else {*/
     $page = "homework";
-}
+//}
 
 //This needs to be wrapped around session Ids and logins
 if ($page == "upload") {

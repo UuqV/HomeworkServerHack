@@ -1,4 +1,4 @@
-#!/bin/bash
+2#!/bin/bash
 
 # ======================================================================
 # this script takes in a single parameter, the base path of all of

@@ -2,12 +2,13 @@
 require_once("controller/controller_functions.php");
 require_once("controller/data_functions.php");
 
+
 //Make model function calls for homework here
 //URL PARSING
-$semester = check_semester();
-$course = check_course();
+$semester = "f14";
+$course = "csci1200";
 
-$username = $_SESSION["id"];
+$username = "deadbeef";
 //END URL PARSING
 
 $class_config = get_class_config($semester,$course);//Gets class.JSON data
@@ -15,6 +16,7 @@ if ($class_config == NULL) {
     ?><script>alert("Configuration for this class (class.JSON) is invalid.  Quitting");</script>
     <?php exit();
 }
+
 $most_recent_assignment_id =        most_recent_released_assignment_id($class_config);
 $most_recent_assignment_version =   most_recent_assignment_version($username, $semester,$course, $most_recent_assignment_id);
 
@@ -95,7 +97,6 @@ $status = parse_status();
 
 //Data for assignment verion quick select dropdown
 $select_submission_data = get_select_submission_data($username, $semester,$course, $assignment_id, $assignment_config, $highest_version);
-
 render("homework", array(
     "semester"=>                $semester,
     "course"=>                  $course,
