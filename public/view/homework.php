@@ -115,14 +115,15 @@ window.addEventListener('load', function() {
             <p class="sub">
                 <?php require_once("view/".$semester."_".$course."_upload_message.php"); ?>
                     </p>
-                    <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
+                    <form action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
                         method="post" enctype="multipart/form-data" 
                         onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
+
                     <input type="dropbox-chooser" id="db-chooser" 
                         name="dropbox-selected-file" style="visibility: hidden;" data-link-type="direct" />
                     <div class="alert alert-info" id="dbchosen"></div>
-                    <input type="submit" value="Upload">
-
+                    <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
+                    </form>
 
             <!--
             <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
