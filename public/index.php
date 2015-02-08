@@ -27,11 +27,11 @@ ini_set('display_errors', 1);
 session_start();
 $_SESSION["id"] = $user;
 
-/*if (isset($_GET["page"])) {
+if (isset($_GET["page"])) {
     $page = htmlspecialchars($_GET["page"]);
-} else {*/
+} else {
     $page = "homework";
-//}
+}
 
 //This needs to be wrapped around session Ids and logins
 if ($page == "upload") {

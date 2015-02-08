@@ -140,19 +140,7 @@ while true; do
 	fi
 
 
-        # check to see if this assignment is already being graded
-	# wait until the lock is available (up to 5 seconds)
-	flock -w 5 200 || { echo "ERROR: flock() failed. $NEXT_TO_GRADE" >&2; exit 1; }
-	if [ -e "$base_path/$TO_BE_GRADED/GRADING_$NEXT_TO_GRADE" ]
-	then
-    	     echo "skip $NEXT_TO_GRADE, being graded by another grade_students.sh process"
-	    flock -u 200
-	    continue
-	else
-	    # mark this file as being graded
-	    touch $base_path/$TO_BE_GRADED/GRADING_$NEXT_TO_GRADE
-	    flock -u 200
-	fi
+
 
 
 	 echo "========================================================================"
@@ -480,10 +468,8 @@ while true; do
 
 
 	# remove submission & the active grading tag from the todo list
-	flock -w 5 200 || { echo "ERROR: flock() failed. $NEXT_TO_GRADE" >&2; exit 1; }
 	rm -f $base_path/$TO_BE_GRADED/$NEXT_TO_GRADE
 	rm -f $base_path/$TO_BE_GRADED/GRADING_$NEXT_TO_GRADE
-	flock -u 200
 
 
 	ENDTIME=$(date +%s)

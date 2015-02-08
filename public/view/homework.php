@@ -1,6 +1,5 @@
 <?php
 require_once("controller/controller_functions.php");
-require_once("controller/data_functions.php");
 
 print('<!-- Course Container -->');
 require_once("view/".$semester."_".$course."_container.php");
@@ -116,7 +115,7 @@ window.addEventListener('load', function() {
             </p>
             <form class="form_submit" action="<?php echo '?page=upload&semester='.$semester.'&course='.$course.'&assignment_id='.$assignment_id; ?>"
                     method="post" enctype="multipart/form-data"
-                    onsubmit="<?php echo "YASSSS"; upload_homework($username, $semester, $course, $assignment_id, $homework_file);?>">
+                    onsubmit="return check_for_upload('<?php echo $assignment_name.', '.$highest_version.', '.$max_submissions;?>')">
                     <label for="file" class="label">Select File:</label>
                     <input type="file" name="file" id="file" />
                     <input type="submit" name="submit" value="Submit File" class="btn btn-primary">
